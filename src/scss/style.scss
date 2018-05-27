@@ -1,0 +1,970 @@
+$navbar_text_color: #fff;
+$primary_base_color: rgba(5, 57, 100, 0.8);
+$primary_base_color_light: rgba(81,139,187, 0.9);
+$primary_base_color_mid: rgba(11, 95, 165, 0.5);
+$secondary_base_color_light: rgba(255, 241, 99, 0.8);
+$secondary_base_color_mid: rgba(255, 232, 0, 0.9);
+$third_base_color_mid: rgb(233, 0, 58);
+$third_base_color_light: rgba(234, 52, 98, 0.9);
+
+$warm_color_light: rgba(255, 236, 188, 0.4);
+$warm_color_mid: #ffdc7f;
+$section_background_color: rgba(217, 217, 224, 1);
+$scrollable_background_color: rgba(189, 216, 136, 0.4);
+$orange_red_color: rgba(255, 73, 0, 1);
+$green_yellow_color: rgba(186, 205, 102, 0.8);
+
+$arrow_text_color: #e67258;
+$progress_bar_color: rgba(211, 111, 71, 0.9);
+
+$company_info_panel_bg: rgba(142, 140, 224, 0.2);
+$company_text_yellow_light: rgba(242, 253, 191, 0.9);
+$mentour_card_border: rgba(192, 201, 147, 0.8);
+$mentour_card_body_bg: rgba(47, 114, 170, 0.7);
+
+$contact-bg-color: rgba(11, 63, 96, 1);
+
+$bg-start: #9d9181;
+$bg-end: #9e866c;
+$card-bg: #e6e5e1;
+$dribbble-color: #ea4b89;
+$twitter-color: #68aade;
+$facebook-color: #3b5999;
+
+$dots_overlay: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGElEQVQYV2NktUz5//v4HEYGKIAziBcAAP1yBAVkrRwYAAAAAElFTkSuQmCC';
+$landing_img: '../img/mountains.jpg';
+$school_bg_img: '../img/bg/bg0.jpg';
+$work-bg-img: '../img/bg/blue.jpg';
+$project-bg-img: '../img/bg/cloud-road.jpg';
+$dark-nav-overlay: rgba(0, 0, 0, 0.7);
+
+/**************** TEST Variables ******************/
+$main-color: #fff;
+$secondary-color: #283271;
+
+/**************** Fonts ***************************/
+@font-face {
+  font-family: 'Passero One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Passero One'), local('PasseroOne-Regular'), url(http://themes.googleusercontent.com/static/fonts/passeroone/v5/5eWwFFxCBNQER-1nDlru9Z0EAVxt0G0biEntp43Qt6E.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Passion One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Passion One'), local('PassionOne-Regular'), url(http://themes.googleusercontent.com/static/fonts/passionone/v3/fY6k21F1QT2c_Oc3HRNDwp0EAVxt0G0biEntp43Qt6E.ttf) format('truetype');
+}
+
+/*************************************************/
+
+@keyframes stripes {
+  to {
+    background-size:100% 100%;
+  }
+}
+/*
+  Global
+*/
+///////// PROGRESS BAR /////////////////////
+.progress{
+  height: 30px !important;
+}
+
+.progress .skill {
+  font: normal 12px "Helvetica Neue";
+  line-height: 35px;
+  padding: 0;
+  margin: 0 0 0 20px;
+  text-transform: uppercase;
+}
+.progress .skill .val {
+  font-size: 10px;
+  float: right;
+  font-style: oblique;
+  margin: 0 20px 0 0;
+  color: #3f3f3f;
+}
+
+.progress-bar {
+  text-align: left;
+  transition-duration: 3s;
+  background-color: $progress_bar_color;
+  border-radius:8px 8px 8px 8px;
+}
+
+.progress{
+  border-radius:8px 8px 8px 8px;
+  background-color: transparent;
+}
+
+.progress-bar-border{
+  padding: 2px;
+  border: 3px solid;
+  border-color: #3f3f3f;
+  border-radius: 10px 10px 10px 10px;
+}
+
+// end global
+
+body{
+  background-color: $section_background_color;
+}
+
+.forward-nav{
+  transform: matrix(0, 1, -1, 0, 0, 0);
+  display: block;
+  right: -2.5em;
+  bottom: 12em;
+
+  position: fixed;
+  font-weight: 700;
+  z-index: 10;
+  letter-spacing: 2px;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+  //color: $secondary_base_color_mid;
+  color: $arrow_text_color;
+
+  transition-timing-function: ease;
+  transition: 1s;
+
+  span{
+    background: url($dots_overlay) repeat;
+  }
+
+  img{
+    //transform: matrix(0, -1, -1, 0, 0, 0);
+    transform: rotate(180deg) scale(0.9, 0.4);
+  }
+}
+
+.forward-nav:hover{
+  color: $third_base_color_light;
+}
+
+#backward-arrow-div{
+  display: none;
+}
+
+.backward-nav{
+  transform: matrix(0, 1, -1, 0, 0, 0);
+  display: block;
+  left: -2.5em;
+  top: 12em;
+
+  position: fixed;
+  font-weight: 700;
+  z-index: 10;
+  letter-spacing: 2px;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+  //color: $secondary_base_color_mid;
+  color: $arrow_text_color;
+
+  transition-timing-function: ease;
+  transition: 1s;
+
+  span{
+    background: url($dots_overlay) repeat;
+  }
+
+  img{
+    //transform: matrix(0, -1, -1, 0, 0, 0);
+    transform: rotate(0deg) scale(0.9, 0.4);
+  }
+}
+
+#navigation-bar{
+  z-index: 999;
+  font-family: "Helvetica Neue Condensed Bold", Arial, Helvetica, sans-serif;
+  font-size: 1.1em;
+
+  .my-brand{
+    margin-right: 0 !important;
+    font-size: 1.8em !important;
+    font-weight: bolder;
+    color: $navbar_text_color;
+  }
+
+  .my-mid-links{
+    margin-left: 4em;
+    margin-right: 4em;
+    display: flex;
+
+    a{
+      text-transform: uppercase;
+      color: $navbar_text_color;
+      text-decoration: none;
+      position: relative;
+      transform: translateY(0);
+      display: inline-block;
+      cursor: pointer;
+      margin: 1em;
+      transition-timing-function: ease;
+
+      .yellow-underline{
+        border-top: 10px solid $secondary_base_color_light;
+        position: absolute;
+        display: inline-block;
+        width: 0;
+        left: -7px;
+        bottom: -9px;
+        width: 0;
+      }
+    }
+
+    a:active{
+      transform: translateY(-5px);
+      transition: all 0.5s;
+
+      .yellow-underline{
+        width: calc(100% + 10px);
+        transition: all 0.3s;
+      }
+    }
+
+    a:hover{
+      transform: translateY(-5px);
+      transition: all 0.5s;
+
+      .yellow-underline{
+        width: calc(100% + 10px);
+        transition: all 0.3s;
+      }
+    }
+  } // end .my-mid-links
+
+  .my-nav-buttons{
+    .my-single-navbutton{
+      background-color: transparent;
+      color: $navbar_text_color;
+      font-size: 1.1em;
+      font-weight: bold;
+      border: 2px $navbar_text_color solid;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+      transition-timing-function: ease;
+      transition: 0.5s;
+    }
+
+    .my-single-navbutton:before{
+      content: "";
+      position: absolute;
+      background: $secondary_base_color_light;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: 100%;
+      z-index: -1;
+      transition: top 0.5s;
+    }
+
+    .my-single-navbutton:hover{
+      color: $third_base_color_light;
+    }
+
+    .my-single-navbutton:hover:before{
+      top: 0;
+    }
+  } // end .my-nav-buttons
+}
+
+#my-cover-section{
+  background: url($dots_overlay) repeat, url($landing_img);
+  min-height: 680px;
+  /* Set a specific height */
+    height: 680px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+  opacity: 0.9;
+  display: block;
+
+  .background-overlay{
+    background: $primary_base_color_mid;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 680px;
+    display: block;
+  }
+
+  .background-overlay:after {
+    background: linear-gradient(-45deg, $section_background_color 8px, transparent 0), linear-gradient(45deg, $section_background_color 8px, transparent 0);
+    background-position: left-bottom;
+    background-repeat: repeat-x;
+    background-size: 16px 16px;
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 16px;
+  }
+
+  .my-cover-content{
+    margin-top: 6em;
+  }
+
+  .landing-container{
+    padding-top: 15em;
+    padding-left: 6em;
+    padding-right: 6em;
+  }
+
+  .my-name{
+    padding-left: 6px;
+    margin-left: 12px;
+    text-transform: uppercase;
+    font-family: "Helvetica Neue Condensed Bold", Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+  }
+
+  .my-tick{
+    padding-right: 5px;
+    padding-left: 5px;
+    color: $third_base_color_mid;
+    font-family: "Passion One";
+    font-weight: 700;
+  }
+
+  .sub-content-landing{
+    font-size: 1.3em;
+  }
+} // end my-cover-section
+
+#my-skills-section{
+  display: block;
+  font-weight: 800;
+  position: relative;
+
+  .fixed-panel{
+    background-color: $warm_color_light;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    padding-right: 6px;
+    padding-left: 6px;
+  }
+
+  .fixed-panel:before {
+    background: linear-gradient(-135deg, $section_background_color 8px, transparent 0), linear-gradient(135deg, $section_background_color 8px, transparent 0);
+    background-position: left-top;
+    background-repeat: repeat-x;
+    background-size: 16px 16px;
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 16px;
+  }
+  .fixed-panel:after {
+    background: linear-gradient(45deg, $section_background_color 8px, transparent 0), linear-gradient(-45deg, $section_background_color 8px, transparent 0);
+    background-position: left-bottom;
+    background-repeat: repeat-x;
+    background-size: 16px 16px;
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 16px;
+  }
+
+  .scrollable-panel{
+    background-color: $scrollable_background_color;
+  }
+
+  .padding-right-zero{
+    padding-right: 0 !important;
+  }
+
+  .padding-left-zero{
+    padding-left: 0 !important;
+  }
+
+  /* Skill Intro */
+  .skill-intro{
+    //background: url($dots_overlay) repeat;
+    margin: 1.5em;
+    font-family: 'PT Sans', sans-serif;
+  }
+
+  .skill-intro-title-lg{
+    background: url($dots_overlay) repeat;
+    font-size: 1.8em;
+    letter-spacing: 5px;
+    margin: 3px;
+    font-weight: 700;
+  }
+
+  .skill-intro-title-reg{
+    background: url($dots_overlay) repeat;
+    font-size: 1em;
+    letter-spacing: 3px;
+    margin: 3px;
+    font-weight: 500;
+  }
+
+  .skill-intro-mid{
+    padding-left: 10em;
+    color: $orange_red_color;
+  }
+
+  .skill-intro-end{
+    padding-left: 15em;
+  }
+
+  .skill-intro-content{
+    margin: 2em;
+    font-family: 'PT Sans', sans-serif;
+    transition-duration: 1s;
+  }
+
+  /* sticky sidebar */
+  .sidebar{
+    will-change: min-height;
+  }
+
+  .sidebar__inner{
+    transform: translate(0, 0);
+    /* For browsers don't support translate3d. */
+    transform: translate3d(0, 0, 0);
+    will-change: position, transform;
+  }
+
+  .clearfix{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .clearfix:after{
+		display: block;
+		content: "";
+		clear: both;
+	}
+
+  .skills-scrolling-content{
+    background: $green_yellow_color;
+    padding: 3em;
+
+    .chart-icon{
+      padding: 0;
+    }
+
+    .chart-name{
+      padding-left: 0;
+    }
+  }
+
+  .skills-scrolling-content:before {
+    background: linear-gradient(-135deg, $section_background_color 8px, transparent 0), linear-gradient(135deg, $section_background_color 8px, transparent 0);
+    background-position: left-top;
+    background-repeat: repeat-x;
+    background-size: 16px 16px;
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 16px;
+  }
+  .skills-scrolling-content:after {
+    background: linear-gradient(45deg, $section_background_color 8px, transparent 0), linear-gradient(-45deg, $section_background_color 8px, transparent 0);
+    background-position: left-bottom;
+    background-repeat: repeat-x;
+    background-size: 16px 16px;
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 16px;
+  }
+}
+
+#my-school-section{
+  background: url($dots_overlay) repeat, url($school_bg_img) no-repeat center center;
+  /* Set a specific height */
+    height: 1300px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  //min-height: 680px;
+  //background-size: cover;
+  display: block;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  color: $navbar_text_color;
+
+  .title-wrap{
+    margin-top: 2em;
+  }
+
+  .uni-title-wrap{
+    padding-top: 7em;
+  }
+
+  .education-title{
+    font-weight: 400;
+    font-size: 1.7em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border-bottom: 2px solid $navbar_text_color;
+    //transition-duration: 0.3s;
+  }
+
+  .school-name{
+    font-weight: 600;
+    font-size: 2.5em;
+  }
+
+  .school-yr{
+    font-weight: 100;
+    font-size: 0.8em;
+  }
+
+  .red-under-line{
+    border-top: 10px solid $secondary_base_color_light;
+    position: absolute;
+    display: inline-block;
+    left: -7px;
+    bottom: -9px;
+    width:  calc(100% + 22px);
+  }
+
+  .sjsu-logo{
+    padding: 2px;
+    width: 15em;
+    height: 15em;
+    border: 10px solid $secondary_base_color_light;
+    border-radius: 20px 20px 20px 20px;
+  }
+
+  .school-degree{
+
+  }
+
+  .degree-name{
+    font-weight: 600;
+    font-size: 2em;
+    letter-spacing: 2px;
+  }
+
+  .red-under-line2{
+    border-top: 10px solid $secondary_base_color_light;
+    position: absolute;
+    display: inline-block;
+    left: -6px;
+    bottom: 55px;
+    width:  calc(70%);
+  }
+
+  .school-gpa{
+    font-size: 1em;
+    letter-spacing: 1px;
+  }
+  .gpa-num{
+    font-weight: 600;
+    font-size: 2.2em;
+    letter-spacing: 1px;
+  }
+  .gpa-total{
+    font-weight: 300;
+    font-size: 1em;
+  }
+
+  .rmd-super-title{
+    text-transform: uppercase;
+    font-size: 2.5em;
+    font-weight: 700;
+    letter-spacing: 3px;
+  }
+
+  #rmd-cards{
+    transition-duration: 3s;
+  }
+}
+.company-card{
+  border: 0 !important;
+}
+
+.card-profile {
+  width: 300px;
+  margin: 50px auto;
+  background-color: $card-bg;
+  border-radius: 0;
+  border: 10px solid $secondary_base_color_light;
+  box-shadow: 1em 1em 2em rgba(0,0,0,.2);
+
+  .company-card-image{
+    //width: 300px;
+    //height: 100px;
+  }
+
+  .card-img-top {
+    border-radius: 0;
+  }
+
+  .card-img-profile {
+    max-width: 100%;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-top: -95px;
+    margin-bottom: 35px;
+    border: 5px solid $card-bg;
+  }
+
+  .card-title {
+    margin-bottom: 50px;
+
+    small {
+      display: block;
+      font-size: .6em;
+      margin-top: .2em;
+    }
+  }
+
+  .rmd-title{
+    font-size: 2em;
+    color: #3f3f3f;
+    letter-spacing: 3px;
+    font-weight: 600;
+
+    .plinks{
+      font-size: 0.8em;
+      color: white;
+    }
+  }
+
+  .card-links {
+    margin-bottom: 25px;
+
+    .fa {
+      margin: 0 1em;
+      font-size: 1.6em;
+
+      &:focus,
+      &:hover {
+        text-decoration: none;
+      }
+
+      &.fa-dribbble {
+        color: $dribbble-color;
+        font-weight: bold;
+
+        &:hover {
+          color: darken($dribbble-color, 10%);
+        }
+      }
+
+      &.fa-twitter {
+        color: $twitter-color;
+
+        &:hover {
+          color: darken($twitter-color, 10%);
+        }
+      }
+
+      &.fa-facebook {
+        color: $facebook-color;
+
+        &:hover {
+          color: darken($facebook-color, 10%);
+        }
+      }
+    }
+  }
+
+  .course-info{
+    font-size: 0.7em;
+    border-top: 5px solid $third_base_color_light;
+  }
+}
+
+#my-work-section{
+  background: url($dots_overlay) repeat, url($work_bg_img) no-repeat center center;
+  min-height: 680px;
+  //background-size: cover;
+  display: block;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  color: $navbar_text_color;
+
+  .work-section-layout-xy{
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 5em;
+    padding-bottom: 50px;
+  }
+
+  .company-layout-col-xr{
+    padding-left: 50px;
+    padding-right: 0px;
+  }
+
+  .company-layout-col-xl{
+    padding-left: 0px;
+    padding-right: 50px;
+  }
+
+  .company{
+    //width: 100%;
+    //height: 100%;
+    //margin-top: 50px;
+    //margin-bottom: 50px;
+    //border: 2px solid #fff;
+  }
+
+  .cmp-name{
+    font-size: 1.8em;
+    letter-spacing: 2px;
+    //color: $secondary_base_color_mid;
+    color: #00A60B;
+  }
+
+  .company-intro{
+    display: block;
+    font-size: 1.5em;
+    border-bottom: 2px solid $secondary_base_color_light;
+  }
+
+  .company-intro a{
+    color: white;
+    font-size: 1.8em;
+  }
+
+  .position-text{
+    margin-top: 10px;
+    display: block;
+    font-size: 1.2em;
+  }
+
+  .position-title{
+    text-transform: capitalize;
+    font-size: 1.2em;
+    //font-family: "Helvetica Neue";
+  }
+
+  .takeout-content{
+    display: block;
+    margin-left: 3em;
+    padding-bottom: 1em;
+  }
+  .company-info-panel-wrapper{
+    padding-left: 0;
+    padding-right: 0;
+    //padding-bottom: 50px;
+    color: $company_text_yellow_light;
+
+    .company-info-panel{
+      background: $company_info_panel_bg;
+      padding-right: 48px;
+      padding-left: 48px;
+      box-shadow: 1em 1em 2em rgba(0,0,0,.2);
+    }
+  }
+
+  .tech-name-hl{
+    font-size: 1.1em;
+    color: rgb(255, 147, 107);
+    font-weight: 400;
+    letter-spacing: 1.5px;
+  }
+
+  .mentour-sec{
+    padding-bottom: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mentour-card{
+    display: flex;
+  }
+
+  .mentour-img-wrap{
+    z-index: 100;
+  }
+
+  .mentour-img{
+    max-width: 100%;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border: 5px solid $mentour_card_border;
+  }
+
+  .mentour-card-body{
+    border: 5px solid $mentour_card_border;
+    border-radius: -50% 0 0 -50%;
+    border-left: 0px;
+    margin-left: -75px;
+    padding-left: 85px;
+    display: flex;
+    background: $mentour_card_body_bg;
+
+    .mentour-info{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .mentour-name{
+        font-size: 1.5em;
+        font-family: "Helvetica Neue Condensed Bold", Arial, Helvetica, sans-serif;
+        letter-spacing: 3px;
+        color: $company_text_yellow_light;
+        margin-right: 1.5em;
+      }
+
+      .mentour-position{
+        font-size: 0.7em;
+        font-family: "Helvetica Neue Condensed Bold", Arial, Helvetica, sans-serif;
+        letter-spacing: 2px;
+        color: rgba(167, 166, 229, 0.8);
+      }
+    }
+
+    .mentour-links{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1.5em;
+
+      a{
+        color: $company_text_yellow_light;
+      }
+
+      a:hover{
+        color: rgba(209, 233, 141, 0.9);
+      }
+    }
+  }
+}
+
+#my-project-section{
+  font-family: "Helvetica Neue Condensed Bold", Arial, Helvetica, sans-serif;
+
+  .project-section-header{
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+
+  .project-section-text{
+    font-size: 1.5em;
+  }
+
+  .header-underline{  // ?
+    border-top: 10px solid $third_base_color_light;
+    position: absolute;
+    display: inline-block;
+    width: 0;
+    left: -7px;
+    bottom: -9px;
+    width: calc(100%+10px);
+  }
+
+  .my-github-icon{
+    font-size: 2em;
+    color: black;
+  }
+  .my-github-icon:hover{
+    color: #3f3f3f;
+  }
+
+  .emphasize{
+    text-transform: uppercase;
+    color: $third_base_color_light;
+    //letter-spacing: 2px;
+    font-weight: 550;
+  }
+
+  .emphasize-0{
+    color: $third_base_color_light;
+    //letter-spacing: 2px;
+    font-weight: 550;
+  }
+
+  .emphasize-1{
+    text-transform: uppercase;
+    color: $orange_red_color;
+    font-weight: 450;
+  }
+
+  .project-name{
+    font-weight: 600;
+    color: $third_base_color_light;
+    font-size: 2em;
+  }
+
+  .project-link{
+    padding-left: 0.5em;
+  }
+
+  .project-link:hover{
+    color: $third_base_color_mid;
+  }
+
+  .titem-h{
+    width: 10em;
+  }
+
+  .titem-c{
+
+  }
+
+  .team-panel{
+    .team-header{
+      text-transform: uppercase;
+      font-weight: 550;
+    }
+
+    .team-role{
+      margin-left: 2em;
+      padding: 10px;
+      font-size: 1.1em;
+    }
+  }
+
+  .p-img{
+    width: calc(50%);
+    height: calc(50%);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #3f3f3f;
+  }
+}
+
+#contact-me-section{
+  min-height: 700px;
+  background: $contact-bg-color;
+  color: white;
+
+  .contact-links{
+    color: white;
+    font-size: 2em;
+  }
+}
+
+.impr-note{
+  text-transform: uppercase;
+  font-weight: bold;
+}
